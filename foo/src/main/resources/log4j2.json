@@ -1,0 +1,20 @@
+{
+  "configuration": {
+    "appenders": {
+      "Console": {
+        "name": "console",
+        "PatternLayout": {
+          "pattern": "%d %-5p [%-10t] %-20c{1.} : %m%n"
+        }
+      }
+    },
+    "loggers": {
+      "root": {
+        "level": "info",
+        "AppenderRef": {
+          "ref": "console"
+        }
+      }
+    }
+  }
+}

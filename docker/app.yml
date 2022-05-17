@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+  foo:
+    image: sashamatveev/org.am.foo:1.0-SNAPSHOT
+    environment:
+      spring.data.mongodb.uri: mongodb://mongo:27017/
+      spring.data.mongodb.database: foo
+
+  mongo:
+    image: mongo
+    restart: always
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://mongo:27017/
