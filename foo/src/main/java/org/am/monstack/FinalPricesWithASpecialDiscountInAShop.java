@@ -1,6 +1,7 @@
 package org.am.monstack;
 
 import java.util.Arrays;
+import java.util.Stack;
 
 public class FinalPricesWithASpecialDiscountInAShop {
 
@@ -13,16 +14,17 @@ public class FinalPricesWithASpecialDiscountInAShop {
 
     public int[] finalPrices(int[] prices) {
         int[] res = new int[prices.length];
-
-        for (int i = 0; i < prices.length; i++) {
-            var price = prices[i];
-            for (int j = i + 1; j < prices.length; j++) {
-                if (prices[j] <= price) {
-                    price = price - prices[j];
-                    break;
-                }
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < prices.length; i++){
+            while (!stack.isEmpty() && prices[i] <= prices[stack.peek()]){
+                int top = stack.pop();
+                res[top] = prices[top] - prices[i];
             }
-            res[i] = price;
+            stack.push(i);
+        }
+        while (!stack.isEmpty()){
+            int top = stack.pop();
+            res[top] = prices[top];
         }
         return res;
     }
