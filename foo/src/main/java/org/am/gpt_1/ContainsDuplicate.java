@@ -1,4 +1,4 @@
-package org.am.gpt._1;
+package org.am.gpt_1;
 
 import java.util.HashMap;
 
