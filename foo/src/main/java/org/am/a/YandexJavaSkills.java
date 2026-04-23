@@ -1,4 +1,4 @@
-package org.am.i;
+package org.am.a;
 
 import java.time.Instant;
 import java.util.concurrent.PriorityBlockingQueue;

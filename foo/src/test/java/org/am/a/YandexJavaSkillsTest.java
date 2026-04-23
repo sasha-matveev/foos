@@ -1,4 +1,4 @@
-package org.am.i;
+package org.am.a;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
